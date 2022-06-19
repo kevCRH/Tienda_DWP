@@ -16,7 +16,7 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idcliente;
+    private Long idCliente;
     private String nombre;
     private String apellidos;
     private String correo;
