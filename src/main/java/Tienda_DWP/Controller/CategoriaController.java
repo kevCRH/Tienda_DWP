@@ -21,7 +21,7 @@ public class CategoriaController {
     public String inicio(Model model) {
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
-        return "categoria/listado";
+        return "/categoria/listado";
     }
 
     @GetMapping("/categoria/nuevo")
@@ -40,11 +40,12 @@ public class CategoriaController {
         categoria = categoriaService.getCategoria(categoria);
         model.addAttribute("categoria", categoria);
         return "/categoria/modifica";
+       
     }
 
     @GetMapping("/categoria/eliminar/{idCategoria}")
     public String eliminarCategoria(Categoria categoria) {
         categoriaService.delete(categoria);
-        return "redirect:/categoria/eliminar";
+        return "redirect:/categoria/listado";
     }
 }
