@@ -34,13 +34,13 @@ public class CategoriaController {
         categoriaService.save(categoria);
         return "redirect:/categoria/listado";
     }
-
+        
     @GetMapping("/categoria/modificar/{idCategoria}")
     public String modificarCategoria(Categoria categoria, Model model) {
         categoria = categoriaService.getCategoria(categoria);
         model.addAttribute("categoria", categoria);
         return "/categoria/modifica";
-       
+
     }
 
     @GetMapping("/categoria/eliminar/{idCategoria}")
